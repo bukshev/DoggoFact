@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Fact List View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="FactListViewController" id="Y6W-OH-hqX" customClass="FactListViewController" customModule="DoggoFact" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5D-RR-cBV">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nef-nV-Vo3">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <connections>
+                                            <segue destination="mUp-eu-O6i" kind="embed" identifier="FactListTableViewController" id="Y6O-Bp-hGL"/>
+                                        </connections>
+                                    </containerView>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6Lb-ZE-AMb">
+                                        <rect key="frame" x="188.5" y="390.5" width="37" height="37"/>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstItem="6Lb-ZE-AMb" firstAttribute="centerX" secondItem="g5D-RR-cBV" secondAttribute="centerX" id="JAv-Zg-p4n"/>
+                                    <constraint firstItem="Nef-nV-Vo3" firstAttribute="leading" secondItem="g5D-RR-cBV" secondAttribute="leading" id="SLr-kj-C1H"/>
+                                    <constraint firstItem="Nef-nV-Vo3" firstAttribute="top" secondItem="g5D-RR-cBV" secondAttribute="top" id="XK9-Pc-09t"/>
+                                    <constraint firstItem="6Lb-ZE-AMb" firstAttribute="centerY" secondItem="g5D-RR-cBV" secondAttribute="centerY" id="aQD-43-L61"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nef-nV-Vo3" secondAttribute="trailing" id="gWH-I5-u4S"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nef-nV-Vo3" secondAttribute="bottom" id="tOm-2a-xrP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g5D-RR-cBV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LTL-i6-hxD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="g5D-RR-cBV" secondAttribute="trailing" id="SBl-7h-1MI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="g5D-RR-cBV" secondAttribute="bottom" id="kjS-mZ-heq"/>
+                            <constraint firstItem="g5D-RR-cBV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="oFs-ly-VFD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressHUD" destination="6Lb-ZE-AMb" id="Zrc-Ib-McD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="114"/>
+        </scene>
+        <!--Fact List Table View Controller-->
+        <scene sceneID="jeq-6s-IMQ">
+            <objects>
+                <tableViewController id="mUp-eu-O6i" customClass="FactListTableViewController" customModule="DoggoFact" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FgS-tk-ZBE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FactListTableCell" rowHeight="88" id="bkS-u2-2HS" customClass="FactListTableCell" customModule="DoggoFact" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bkS-u2-2HS" id="caP-6u-zhq">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXJ-Xh-4S6">
+                                            <rect key="frame" x="20" y="11" width="374" height="66"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="cXJ-Xh-4S6" secondAttribute="bottom" id="8LV-b7-hlT"/>
+                                        <constraint firstItem="cXJ-Xh-4S6" firstAttribute="leading" secondItem="caP-6u-zhq" secondAttribute="leadingMargin" id="H1r-Xi-SwW"/>
+                                        <constraint firstItem="cXJ-Xh-4S6" firstAttribute="top" secondItem="caP-6u-zhq" secondAttribute="topMargin" id="ORY-1k-VQb"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cXJ-Xh-4S6" secondAttribute="trailing" id="qql-DF-f6u"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="cXJ-Xh-4S6" id="j6z-wv-Hie"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mUp-eu-O6i" id="DQl-mB-enR"/>
+                            <outlet property="delegate" destination="mUp-eu-O6i" id="gUV-zt-OsV"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="arL-vm-PoH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844.92753623188412" y="113.83928571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

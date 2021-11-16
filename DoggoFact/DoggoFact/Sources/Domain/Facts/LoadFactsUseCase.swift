@@ -39,10 +39,9 @@ extension LoadFactsUseCase: IUseCase {
 
     func execute(with parameters: RequestValue, completion: @escaping LoadFactsCompletion) {
         let configuration = FactsGateway.Configuration(
-            source: .remote(shouldUpdateLocalStorage: false),
-            factsNumber: parameters.factsNumber
+            source: .remote(shouldUpdateLocalStorage: false)
         )
         Log.i(.domain, "Execute the script with configuration: \(configuration)")
-        factsGateway.loadFacts(with: configuration, completion: completion)
+        factsGateway.loadFacts(number: parameters.factsNumber, config: configuration, completion: completion)
     }
 }
